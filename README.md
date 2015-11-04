@@ -1,11 +1,11 @@
-# Slack Webhook Service
+![Intro](intro.png)
 
-This application is a simple webhook service for GitBook that post notifications to Slack.
+This application is a simple webhook service for [GitBook.com](https://www.gitbook.com) that post notifications to [Slack](https://www.slack.com).
 
 #### How to use it?
 
-1. Create an `incoming-webhook` integration in slack.
-2. You'll get an url like `https://hooks.slack.com/services/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`
-3. Create a webhook in your book with `https://slack-service.gitbook.com/hook/v1/T032H76MF/B0DR4R4US/SBdsOaiWfAfX57DNbgZ5wdIq`
-4. Done!
+1. Create an `incoming-webhook` integration in your Slack account.
+2. It generates an URL like `https://hooks.slack.com/services/<tokens>`
+3. Add a webhook in your book with `https://slack-service.gitbook.com/hook/v1/<tokens>`
+4. You're good to go!
 
