@@ -8,7 +8,9 @@
     "dependencies": {
         "express": "4.13.3",
         "lodash": "3.10.1",
-        "q": "1.4.1"
+        "q": "1.4.1",
+        "gitbook-webhook-middleware": "1.0.0",
+        "node-slack": "0.0.7"
     },
     "repository": {
         "type": "git",
