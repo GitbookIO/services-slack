@@ -1,0 +1,21 @@
+{
+    "name": "slack-service.gitbook.com",
+    "main": "app/index.js",
+    "description": "Slack notification service",
+    "homepage": "https://slack-service.gitbook.com",
+    "version": "0.0.0",
+    "private": true,
+    "dependencies": {
+        "express": "4.13.3",
+        "lodash": "3.10.1",
+        "q": "1.4.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/GitbookIO/services-slack.git"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/GitbookIO/services-slack/issues"
+    }
+}
