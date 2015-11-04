@@ -11,7 +11,6 @@ app.get('/', function (req, res) {
 });
 
 app.post('/hook/v1/:tokens([\\/.\\w]*|)', gitbookMiddleware, function (req, res, next) {
-    console.log('receive', req.headers['x-gitbook-event'], req.body);
     if (req.headers['x-gitbook-event'] !== 'publish') {
         return res.status(200).end();
     }
@@ -19,13 +18,14 @@ app.post('/hook/v1/:tokens([\\/.\\w]*|)', gitbookMiddleware, function (req, res,
     // Extract payload
     var payload = req.body.payload;
     var book = payload.book;
+    var build = payload.build;
 
     // Build slack client
     var hookUrl = url.resolve('https://hooks.slack.com/services/', req.params.tokens)
     var slack = new Slack(hookUrl);
 
     slack.send({
-        text: 'New update on '+book.title,
+        text: '<'+build.author.urls.profile+'|'+build.author.name+'> published a new update of <'+book.urls.access+'|'+book.title+'>',
         username: 'GitBook',
     })
     .then(function() {
