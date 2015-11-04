@@ -27,6 +27,7 @@ app.post('/hook/v1/:tokens([\\/.\\w]*|)', gitbookMiddleware, function (req, res,
     slack.send({
         text: '<'+build.author.urls.profile+'|'+build.author.name+'> published a new update of <'+book.urls.access+'|'+book.title+'>',
         username: 'GitBook',
+        icon_url: 'https://www.gitbook.com/assets/images/logo/128.png'
     })
     .then(function() {
         res.send({ ok: true });
