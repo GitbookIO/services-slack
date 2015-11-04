@@ -1,4 +1,4 @@
-# Slack Wbhook Service
+# Slack Webhook Service
 
 This application is a simple webhook service for GitBook that post notifications to Slack.
 
