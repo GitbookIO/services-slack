@@ -28,10 +28,10 @@ app.post('/hook/v1/:tokens([\\/.\\w]*|)', gitbookMiddleware, function (req, res,
         text: '<'+build.author.urls.profile+'|'+build.author.name+'> published a new update of <'+book.urls.access+'|'+book.title+'>',
         username: 'GitBook',
         icon_url: 'https://www.gitbook.com/assets/images/logo/128.png'
-    })
-    .then(function() {
-        res.send({ ok: true });
-    }, next);
+    }, function(err, body) {
+        if (err) next(err);
+        else res.send({ ok: true });
+    });
 });
 
 app.use(function(err, req, res, next) {
