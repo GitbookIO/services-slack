@@ -7,7 +7,7 @@ var app = express();
 var gitbookMiddleware = GitBookMiddleware();
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
+    res.redirect('https://github.com/GitbookIO/services-slack');
 });
 
 app.post('/hook/v1/:tokens([\\/.\\w]*|)', gitbookMiddleware, function (req, res, next) {
@@ -32,6 +32,11 @@ app.post('/hook/v1/:tokens([\\/.\\w]*|)', gitbookMiddleware, function (req, res,
     .then(function() {
         res.send({ ok: true });
     }, next);
+});
+
+app.use(function(err, req, res, next) {
+    console.error(err.stack || err);
+    res.status(500).send(err.message || err);
 });
 
 var server = app.listen(process.env.PORT || 6001, function () {
