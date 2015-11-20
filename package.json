@@ -1,6 +1,6 @@
 {
     "name": "slack-service.gitbook.com",
-    "main": "app/index.js",
+    "main": "index.js",
     "description": "Slack notification service",
     "homepage": "https://slack-service.gitbook.com",
     "version": "1.0.1",
