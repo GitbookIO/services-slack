@@ -10,7 +10,7 @@ var EVENTS = {
     'publish': function(payload) {
         var book = payload.book;
         var build = payload.build;
-        return '<'+build.author.urls.profile+'|'+build.author.name+'> published a new update of <'+book.urls.access+'|'+book.title+'>';
+        return '<'+build.author.urls.profile+'|'+build.author.name+'> published a new update of <'+book.urls.access+'|'+book.title+'> on branch '+build.branch;
     },
     'thread': function(payload) {
         var book = payload.book;
